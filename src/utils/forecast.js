@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) => {
             callback('Unable to find weather. Try another search!!!', undefined)
 
         }else{
-            callback(undefined, body.current.weather_descriptions[0] + ". Today, temperature is " + body.current.temperature  +" and it feels like " + body.current.feelslike +". It is obeserved at " + body.current.ovservation_time)
+            callback(undefined, body.current.weather_descriptions[0] + ". Today, temperature is " + body.current.temperature  +" and it feels like " + body.current.feelslike +". It is obeserved at " + body.current.observation_time)
         }
     })
 }
