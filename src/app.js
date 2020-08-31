@@ -3,8 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 const geocode= require('./utils/geocode')
 const forecast = require('./utils/forecast')
-console.log(__dirname)
-console.log(path.join(__dirname, '../public'))
+const port = process.env.PORT || 3000
 const app = express()
 //express가 알아듣게 경로 설정 views path 는 vies 안에 hbs 파일 읽을 수있게 설정
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -85,6 +84,6 @@ app.get('*', (req, res) => {
     errorMessage: "Page not found"
 })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen( port , () => {
+    console.log('Server is up on port' + port)
 })
